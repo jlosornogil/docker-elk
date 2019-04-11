@@ -1,8 +1,39 @@
-# Elastic stack (ELK) on Docker
+# Elastic stack (ELK) on Docker for Tomcat Access Log analysis
 
-[![Join the chat at https://gitter.im/deviantony/docker-elk](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/deviantony/docker-elk?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![Elastic Stack version](https://img.shields.io/badge/ELK-6.7.0-blue.svg?style=flat)](https://github.com/deviantony/docker-elk/issues/376)
-[![Build Status](https://api.travis-ci.org/deviantony/docker-elk.svg?branch=master)](https://travis-ci.org/deviantony/docker-elk)
+I've forked this project to configure ELK to analyse Tomcat Access Log files.
+
+The steps to execute it are:
+
+1. Start the stack using `docker-compose`:
+
+```console
+$ docker-compose up
+```
+
+2. Send some access log file/s to analyse:
+
+```console
+$ nc localhost 5000 < /path/to/localhost_access_log_xxx.log
+```
+
+As an alternative you can map a folder where the log files are located. You can do that modifying the logstash configuration.
+
+3. Create an index pattern via the Kibana API:
+
+```console
+$ curl -XPOST -D- 'http://localhost:5601/api/saved_objects/index-pattern' \
+    -H 'Content-Type: application/json' \
+    -H 'kbn-version: 6.7.0' \
+    -d '{"attributes":{"title":"logstash-tomcat-*","timeFieldName":"@timestamp"}}'
+```
+
+4. Import Kibana search, views and dashboard from [objects](kibana/objects). More information about [how to import objects in Kibana](https://support.logz.io/hc/en-us/articles/210207225-How-can-I-export-import-Dashboards-Searches-and-Visualizations-from-my-own-Kibana-). This step is optional. You can create your own custom views and dashboards.
+
+This configuration is based on the article [Analyzing Tomcat log access data with Docker ELK resources](https://www.zylk.net/en/web-2-0/blog/-/blogs/analyzing-tomcat-log-access-data-with-docker-elk-resources).
+
+If you want to persist this configuration and data between restart look the section [How can I persist Elasticsearch data?](#how-can-i-persist-elasticsearch-data).
+
+# Original README file
 
 Run the latest version of the [Elastic stack](https://www.elastic.co/elk-stack) with Docker and Docker Compose.
 
