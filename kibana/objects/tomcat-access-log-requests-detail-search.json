@@ -1,0 +1,25 @@
+[
+  {
+    "_id": "38abbff0-5c5b-11e9-938c-ad1309dbec33",
+    "_type": "search",
+    "_source": {
+      "title": "Requests Detail",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "@timestamp",
+        "request",
+        "response",
+        "bytes"
+      ],
+      "sort": [
+        "_score",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"94e81300-5c5a-11e9-938c-ad1309dbec33\",\"highlightAll\":true,\"version\":true,\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[]}"
+      }
+    }
+  }
+]

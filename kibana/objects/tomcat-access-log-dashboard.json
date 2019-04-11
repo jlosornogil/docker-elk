@@ -1,0 +1,18 @@
+[
+  {
+    "_id": "e5e0d020-5c47-11e9-aa02-0dac35cdf5cf",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Tomcat Access Logs",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"embeddableConfig\":{\"vis\":{\"legendOpen\":false}},\"gridData\":{\"x\":0,\"y\":0,\"w\":24,\"h\":15,\"i\":\"1\"},\"id\":\"faec1a20-5c5a-11e9-938c-ad1309dbec33\",\"panelIndex\":\"1\",\"type\":\"visualization\",\"version\":\"6.7.0\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":24,\"y\":15,\"w\":24,\"h\":15,\"i\":\"2\"},\"id\":\"38abbff0-5c5b-11e9-938c-ad1309dbec33\",\"panelIndex\":\"2\",\"type\":\"search\",\"version\":\"6.7.0\"},{\"embeddableConfig\":{},\"gridData\":{\"x\":24,\"y\":0,\"w\":24,\"h\":15,\"i\":\"3\"},\"id\":\"980bf2d0-5c5b-11e9-938c-ad1309dbec33\",\"panelIndex\":\"3\",\"type\":\"visualization\",\"version\":\"6.7.0\"},{\"gridData\":{\"x\":0,\"y\":15,\"w\":24,\"h\":15,\"i\":\"4\"},\"version\":\"6.7.0\",\"panelIndex\":\"4\",\"type\":\"visualization\",\"id\":\"237a6040-5c5c-11e9-938c-ad1309dbec33\",\"embeddableConfig\":{\"vis\":{\"legendOpen\":true}}}]",
+      "optionsJSON": "{\"darkTheme\":false,\"hidePanelTitles\":false,\"useMargins\":true}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[]}"
+      }
+    }
+  }
+]
